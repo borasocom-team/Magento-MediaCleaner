@@ -12,8 +12,9 @@ class Boraso_MediaCleaner_Model_Observer
 
     public function run()
     {
-        $this->helper->cleanProductMedia();
+	if( Mage::getStoreConfig('mediacleaner/settings/modenabled') ) {
+
+		$this->helper->cleanProductMedia();
+        }
     }
-
-
 }
