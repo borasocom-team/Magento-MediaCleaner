@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Boraso_MediaCleaner>
+            <version>0.1.0</version>
+        </Boraso_MediaCleaner>
+    </modules>
+    <global>
+        <models>
+            <boraso_mediacleaner>
+                <class>Boraso_MediaCleaner_Model</class>
+                <resourceModel>boraso_mediacleaner_resource</resourceModel>
+            </boraso_mediacleaner>
+            <boraso_mediacleaner_resource>
+                <class>Boraso_MediaCleaner_Model_Resource</class>
+            </boraso_mediacleaner_resource>
+        </models>
+        <blocks>
+            <boraso_mediacleaner>
+                <class>Boraso_MediaCleaner_Block</class>
+            </boraso_mediacleaner>
+        </blocks>
+        <helpers>
+            <boraso_mediacleaner>
+                <class>Boraso_MediaCleaner_Helper</class>
+            </boraso_mediacleaner>
+        </helpers>
+    </global>
+
+    <crontab>
+        <jobs>
+            <boraso_mediacleaner>
+                <schedule>
+                    <config_path>mediacleaner_cron_setting</config_path>
+                </schedule>
+                <run>
+                    <model>boraso_mediacleaner/observer::run</model>
+                </run>
+            </boraso_mediacleaner>
+        </jobs>
+    </crontab>
+
+    <default>
+        <mediacleaner>
+            <settings>
+                <modenabled>1</modenabled>
+                <mediacleaner_cron_setting>0 6 * * *</mediacleaner_cron_setting>
+                <dryrun>1</dryrun>
+            </settings>
+        </mediacleaner>
+    </default>
+
+</config>
