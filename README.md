@@ -7,3 +7,6 @@ The module defaults to "active and scheduled" (works out-of-the-box) but in "dry
 1. Check the dryrun log in `magento/var/log/boraso_mediacleaner.log`
 1. Disable dryrun in `Admin -> System -> Configuration -> Media Cleaner`
 
+## Remarks
+
+* Logging must be enabled under `System -> Configuration -> Developer` for the dryrun to work:
